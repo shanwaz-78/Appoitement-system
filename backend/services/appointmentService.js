@@ -2,12 +2,11 @@ import Appointment from "../models/Appointment.js";
 
 const getAppointments = async (res, next) => {
   try {
+    const appointments = await Appointment.find({});
     if (!appointments || appointments.length === 0) {
       return res.status(404).json({ error: "No appointments found" });
     }
-    const appointments = await Appointment.find({});
-
-    res.status(200).json(appointments);
+    return res.status(200).json(appointments);
   } catch (error) {
     next(error);
   }

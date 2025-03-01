@@ -1,4 +1,4 @@
-const appointmentReducer = (state = [], action) => {
+const appointmentReducer = (state = null, action) => {
   switch (action.type) {
     case "FETCH_APPOINTMENTS":
       return action.payload;

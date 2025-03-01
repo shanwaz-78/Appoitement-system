@@ -10,7 +10,7 @@ const server = createServer(app);
 
 server.listen(PORT, async () => {
   try {
-    const {connection} = await openDBConnection(MONGO_URI);
+    const { connection } = await openDBConnection(MONGO_URI);
     console.log(`MongoDB connected: ${connection.host}`);
     console.log(`Server is listening on http://localhost:${PORT}`);
   } catch (error) {
@@ -19,4 +19,4 @@ server.listen(PORT, async () => {
   }
 });
 
-server.on("error", (err) => console.error(`Server error: ${err.message}`));
+server.on("error", (err) => console.error(` Server error: ${err.message}`));
